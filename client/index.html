@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Costo Corte Cameo</title>
+    <link type="text/css" rel="stylesheet" href="purecssframework.css" />
+    <link type="text/css" rel="stylesheet" href="theme-dark.css" />
+    <style>
+      .tblPadding {
+        padding: 3px !important;
+        border-bottom: 0px solid #000 !important;
+      }
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      .hideOverflow {
+        overflow:hidden;
+      }
+      /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #121211 #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #121211;
+    border-radius: 4px;
+    border: 1px solid #000000;
+  }
+    </style>
+  </head>
+  <body class="dark noselect hideOverflow">
+    <header class="main-container header fixed dark">
+      <!-- Nav Bar with Logo Area -->
+      <div class="flex-grid navbar">
+        <!-- Mobile Menu -->
+        <input type="checkbox" id="mobileMenu" class="hide" />
+        <label
+          id="mobileMenuLabel"
+          class="mobile-menu left-side"
+          for="mobileMenu"
+        >
+          <i class="hamburger"></i>
+        </label>
+        <label class="full-screen" for="mobileMenu"></label>
+        <!-- /Mobile Menu -->
+        <div class="col-2 col-12-md logo">
+          <a title="Costo Corte Cameo" class="backHome" href="/">C3</a>
+        </div>
+        <nav class="col-7 col-12-md navbar-right" id="topMenuNav">
+          <div class="navbar-links">
+            <input
+              type="radio"
+              class="hide"
+              name="navbar-menu"
+              id="navbarDropHide"
+              checked
+            />
+            <a
+              href="#"
+              class="active navSelector"
+              id="nav-home"
+              data-type="home"
+              data-name="Inicio"
+              >Inicio</a
+            >
+            <div class="has-drop-menu hover-menu">
+              <input
+                type="radio"
+                id="navbarDropLink1"
+                class="drop-menu-input hide"
+                name="navbar-menu"
+              />
+              <label for="navbarDropLink1" class="menu-label"></label>
+              Configuración <i class="arrow-down"></i>
+              <label class="full-screen" for="navbarDropHide"></label>
+              <ul class="drop-menu">
+                <li>
+                  <a
+                    href="#"
+                    class="navSelector"
+                    id="nav-equipo"
+                    data-type="equipo"
+                    data-name="Equipos"
+                    >Equipos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="navSelector"
+                    id="nav-tapete"
+                    data-type="tapete"
+                    data-name="Tapetes"
+                    >Tapetes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="navSelector"
+                    id="nav-material"
+                    data-type="material"
+                    data-name="Materiales"
+                    >Materiales</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="navSelector"
+                    id="nav-default"
+                    data-type="default"
+                    data-name="Valores Iniciales"
+                    >Valores iniciales</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="navSelector"
+              id="nav-about"
+              data-type="about"
+              data-name="Acerca De"
+              >Acerca de</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="fixed-nav-space" id="top"></div>
+    <div class="main-container">
+      <div class="flex-grid ScreenHolder hide" id="screen-home">
+        <div class="col-12">
+          <table
+            style="border: 0px solid #000 !important"
+            class="tbl form-horizontal form-condensed"
+          >
+            <tbody class="form-elements elements-sm">
+              <tr>
+                <td class="tblPadding" colspan="4">
+                  <span>GENERALES</span>
+                  <div
+                    style="margin: 3px 0px 3px 0px"
+                    class="line"
+                  ></div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="ddlEquipo text-smaller"></span>
+                   Equipo: <span
+                      class="flag-amount black seleccionPredeterminado" data-type="equipo"
+                      title="Establecer como equipo predeterminado"
+                      >&#10004;</span
+                    >
+                  </span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <div class="select-element">
+                    <select
+                      style="padding: 2px 2px 2px 2px !important"
+                      id="ddlEquipo"
+                    ></select>
+                    <div class="select-arrow"></div>
+                  </div>
+                </td>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="ddlTapete text-smaller">Tapete:<span
+                    class="flag-amount black seleccionPredeterminado" data-type="tapete"
+                    title="Establecer como tapete predeterminado"
+                    >&#10004;</span
+                  ></span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <div class="select-element">
+                    <select
+                      style="padding: 2px 2px 2px 2px !important"
+                      id="ddlTapete"
+                    ></select>
+                    <div class="select-arrow"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="tblPadding" colspan="4">
+                  <span>MATERIAL</span>
+                  <div
+                    style="margin: 3px 0px 3px 0px"
+                    class="line"
+                  ></div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="ddlMaterial text-smaller">Tipo:</span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <div class="select-element">
+                    <select
+                      style="padding: 2px 2px 2px 2px !important"
+                      id="ddlMaterial"
+                    ></select>
+                    <div class="select-arrow"></div>
+                  </div>
+                </td>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="txtCosto">Costo:</span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <input
+                    style="padding: 2px 2px 2px 2px !important"
+                    type="number"
+                    step="0.00"
+                    min="0"
+                    id="txtCosto"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="txtMerma">Merma:</span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <input
+                    style="padding: 2px 2px 2px 2px !important"
+                    type="number"
+                    step="0.00"
+                    min="0"
+                    id="txtMerma"
+                  />
+                </td>
+                <td class="tblPadding"></td>
+                <td class="tblPadding"></td>
+              </tr>
+              <tr>
+                <td class="tblPadding" colspan="4">
+                  <span>MANO DE OBRA</span>
+                  <div
+                    style="margin: 3px 0px 3px 0px"
+                    class="line"
+                  ></div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="ddlCopias text-smaller">Copias:<span
+                    class="flag-amount black seleccionPredeterminado" data-type="copia"
+                    title="Establecer cantidad de copias predeterminado"
+                    >&#10004;</span
+                  ></span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <div class="select-element">
+                    <select
+                      style="padding: 2px 2px 2px 2px !important"
+                      id="ddlCopias"
+                    ></select>
+                    <div class="select-arrow"></div>
+                  </div>
+                </td>
+                <td style="width: 20%" class="tblPadding">
+                  <span for="txtMo">M.O:</span>
+                </td>
+                <td style="width: 30%" class="tblPadding">
+                  <input
+                    style="padding: 2px 2px 2px 2px !important"
+                    type="number"
+                    step="0.00"
+                    min="0"
+                    id="txtMo"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="tblPadding" style="width: 20%" class="tblPadding">
+                  <span for="txtPausa">Pausa:</span>
+                </td>
+                <td class="tblPadding" style="width: 30%" class="tblPadding">
+                  <input type="number" step="0" min="0" id="txtPausa" />
+                </td>
+                <td class="tblPadding" style="width: 20%"></td>
+                <td class="tblPadding" style="width: 30%"></td>
+              </tr>
+              <tr>
+                <td style="width: 10%"  class="tblPadding">
+                  <span for="txtCosto">Descripción:</span>
+                </td>
+                <td style="width: 90%" colspan="3" class="tblPadding">
+                  <input
+                    style="padding: 2px 2px 2px 2px !important"
+                    type="text"
+                    id="txtDescripcion"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4" class="tblPadding">
+                  <button type="submit" id="addQuoteItem-button" class="btn primary left">Agregar a lista &downarrow;</button>
+                </td>
+            
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="quoteList" class="col-12">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th class="tblPadding" style="width: 5%;text-align: center;"></th>
+                <th class="tblPadding" style="width: 45%;text-align: center;">Material</th>
+                <th class="tblPadding" style="width: 25%;text-align: center;">Tiempo</th>
+                <th class="tblPadding" style="width: 25%;text-align: center;">Costo</th>
+              </tr>
+            </thead>
+            </table>
+            <div style="height: 170px;overflow-y: scroll;">
+            <table class="tbl">
+            <tbody id="quoteDetails"></tbody>
+            </table> 
+          </div>
+           
+            <table class="tbl">
+            <tfoot>
+              <tr>
+                <td class="tblPadding" colspan="4">
+                  <div
+                  style="margin: 3px 0px 3px 0px"
+                  class="line"
+                ></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="tblPadding" style="width: 45%;text-align: right;">
+                  <div class="left">
+                   <button id="cleanQuoteList-button" class="btn black">Limpiar</button> 
+                   <button id="copyQuoteList-button" class="btn info">Copiar</button>
+                  
+                  </div>
+                  
+                </td>
+                <td class="tblPadding" style="width: 5%;text-align: right;">&rightarrow;</td>
+                <td class="tblPadding" style="width: 25%;text-align: center;" id="quoteTotalTiempo"></td>
+                <td class="tblPadding" style="width: 25%;text-align: center;" id="quoteTotalCosto"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="flex-grid ScreenHolder hide" id="screen-messages">
+        <div class="alert info" style="width: 100%">
+          <div class="alert-title clearfix">
+            <i class="alert-icon alert-tri-white text-info"></i>
+            <span>Acción Requerida</span>
+          </div>
+          <span id="infoMessageBody"></span>
+        </div>
+      </div>
+      <div class="flex-grid ScreenHolder hide" id="screen-list">
+        <div class="panel" style="width: 100%">
+          <div class="panel-header">
+            <div class="left">
+              <div class="left">
+                <a
+                  href="#"
+                  id="headerCloseBtnList"
+                  data-type=""
+                  class="btn black"
+                  >&lsaquo;</a
+                >
+              </div>
+              <div class="right" style="padding-left: 5px">
+                <span id="headerConfList"></span>
+              </div>
+            </div>
+            <div class="right">
+              <a
+                href="#"
+                id="headerAddBtnList"
+                data-type=""
+                data-name=""
+                class="btn primary text-smaller"
+                >Agregar</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="panel-body"
+          id="bodyConfList"
+          style="width: 100%; height: 450px; overflow-y: scroll"
+        ></div>
+      </div>
+      <div class="flex-grid ScreenHolder hide" id="screen-crud">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="left">
+              <div class="left">
+                <a
+                  href="#"
+                  id="headerCloseBtnCrud"
+                  data-type=""
+                  class="btn black"
+                  >&lsaquo;</a
+                >
+              </div>
+              <div class="right" style="padding-left: 5px">
+                <span id="headerConfCrud"></span>
+              </div>
+            </div>
+            <div class="right"></div>
+          </div>
+          <div class="panel-body" id="bodyConfCrud"></div>
+        </div>
+      </div>
+      <div class="flex-grid ScreenHolder hide" id="screen-about">
+        <div class="panel" style="width: 100%">
+          <div class="panel-header">
+            <div class="left">
+              <div class="left">
+                <a href="#" data-type="" class="btn black backHome">&lsaquo;</a>
+              </div>
+              <div class="right" style="padding-left: 5px">
+                <span>Acerca de</span>
+              </div>
+            </div>
+            <div class="right"><span>C3 V1.0</span></div>
+          </div>
+          <div class="panel-body">
+            C3 (Costo Corte Cameo),<br />
+            por Kelieth M Navas.
+            <p>
+              Créditos: <br>
+              <ul>
+                <li>Pure CSS Framework V1.0 <br>
+                  <span>-- Lowell Hausman</span> </li>
+                <li>jQuery <br> 
+                 <span>-- OpenJS Foundation and other contributors | jquery.org/license</span> </li>
+                <li>JSON module for ExtendScript-based apps <br>
+                  <span>-- Marc Autret, indiscripts</span> </li>
+              </ul>
+            </p>
+          </div>
+          <!-- <div class="panel-footer">Firemedia Studio</div> -->
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="CSInterface.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
