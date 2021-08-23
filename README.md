@@ -29,8 +29,8 @@ Puede usar Adobe Extension Manager, ZXP Installer u otro de su preferencia
 
 
 _Créditos:_
-[Marc Autret](https://github.com/indiscripts)
-[jQuery](https://github.com/jquery)
-[Pure Css Framework PCF](http://www.purecssframework.com/index.php)
+- [Marc Autret](https://github.com/indiscripts)
+- [jQuery](https://github.com/jquery)
+- [Pure Css Framework PCF](http://www.purecssframework.com/index.php)
 
 
